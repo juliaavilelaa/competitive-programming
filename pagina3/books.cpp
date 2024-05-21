@@ -13,15 +13,8 @@ int main() {
         books.push_back(min);
     }
 
-    if (books.back() < books.front()) {
-        reverse(books.begin(), books.end());
-    } 
-
     for (int i = 0; i < books.size(); i++) {
-        total += books[i];
-        if (total <= t) {
-            max++;
-        }
+        
     }
     
     cout << max << endl;

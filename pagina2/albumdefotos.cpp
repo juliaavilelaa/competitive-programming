@@ -2,19 +2,21 @@
 using namespace std;
 
 bool colarFotos(int x, int y, int l1, int h1, int l2, int h2) {
-    if ((l1 + l2) <= x && abs(h1 - h2) <= y) {
+    if (l1 + l2 <= x && h1 <= y && h2 <= y) {
         return true;
-    } else if ((l1 + l2) <= y && abs(h1 - h2) <= x) {
+    } else if (h1 + h2 <= x && l1 <= y && l2 <= y) {
         return true;
-    } else if ((l1 + h2) <= x && abs(h1 - l2) <= y) {
+    } else if (l1 + h2 <= x && h1 <= y && l2 <= y) {
         return true;
-    }
+    } else if (h1 + l2 <= x && l1 <= y && h2 <= y) {
+        return true;
+    } 
     return false;
 }
 
 int main() {
-    int x, y; //dimensão da página (l, h)
-    int l1, h1, l2, h2; //dimensão das fotos
+    int x, y; 
+    int l1, h1, l2, h2;
 
     cin >> x >> y
         >> l1 >> h1

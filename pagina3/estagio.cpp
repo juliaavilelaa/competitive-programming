@@ -3,13 +3,11 @@ using namespace std;
 
 const int MAX_ALUNOS = 1000;
 
-int main()
-{
+int main() {
     int i, indice_melhor, n;
     int turma = 1;
 
-    struct
-    {
+    struct {
         int codigo, media;
     } alunos[MAX_ALUNOS];
 

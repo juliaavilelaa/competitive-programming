@@ -8,18 +8,33 @@ int main() {
     cin >> n >> m;
     // n = países
     // m = modalidades
-    vector<int> ouro;
-    vector<int> prata;
-    vector<int> bronze;
+    vector<int> ouro(n, 0);
+    vector<int> prata(n, 0);
+    vector<int> bronze(n, 0);
 
     for (int i = 0; i < m; i++) {
-        cin >> o >> p >> b;
-        ouro.push_back(o);
-        prata.push_back(p);
-        bronze.push_back(b);
+        cin >> o;
+        ouro[o-1]++;
+        cin >> p;
+        prata[p-1]++;
+        cin >> b;
+        bronze[b-1]++;
     }
-    
-    for (int i = 0; i < m; i++) {
-        
+
+    cout << "ouros" << endl;
+    for (int i = 0; i < n; i++) {
+        cout << ouro[i] << " ";
     }
+    cout << endl;
+    cout << "pratas" << endl;
+     for (int i = 0; i < n; i++) {
+        cout << prata[i] << " ";
+    }
+    cout << endl;
+    cout << "bronzes" << endl;
+     for (int i = 0; i < n; i++) {
+        cout << bronze[i] << " ";
+    }
+
+    return 0;
 }

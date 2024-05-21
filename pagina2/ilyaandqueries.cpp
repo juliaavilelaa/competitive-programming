@@ -2,21 +2,24 @@
 using namespace std;
 
 int main() {
-    int m, l, r, ans;
+    cin.tie(0);
+    ios_base::sync_with_stdio(0);
+
     string s;
+    int m, l, r, pair;
 
     cin >> s;
-    cin >> m;
 
-    for (int i = 1; i <= m; i++) {
-        ans = 0;
+    cin >> m;
+    while (m--) {
+        pair = 0;
         cin >> l >> r;
         for (int j = l; j < r; j++) {
-            if (s[j] == s[j+1]) {
-                ans++;
+            if (s[j - 1] == s[j]) {
+                pair++;
             }
         }
-        cout << ans << endl;
+        cout << pair << endl;
     }
 
     return 0;
